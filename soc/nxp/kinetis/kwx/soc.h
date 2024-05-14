@@ -11,6 +11,12 @@
 #include <zephyr/sys/util.h>
 #include <fsl_port.h>
 
+#if defined(CONFIG_SOC_MKW38Z4) || defined(CONFIG_SOC_MKW38Z4)
+
+#define LPUART0_CLK_SRC kCLOCK_CoreSysClk
+
+#endif
+
 #if defined(CONFIG_SOC_MKW40Z4) || defined(CONFIG_SOC_MKW41Z4)
 
 #define LPUART0_CLK_SRC kCLOCK_CoreSysClk

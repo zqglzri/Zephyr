@@ -129,7 +129,6 @@ if(${BOARD}${BOARD_QUALIFIERS}_DEPRECATED)
 endif()
 
 zephyr_boilerplate_watch(BOARD)
-
 foreach(root ${BOARD_ROOT})
   # Check that the board root looks reasonable.
   if(NOT IS_DIRECTORY "${root}/boards")
@@ -148,7 +147,6 @@ if((HWMv1 AND NOT EXISTS ${BOARD_DIR}/${BOARD}_defconfig)
   )
   set(BOARD_DIR BOARD_DIR-NOTFOUND CACHE PATH "Path to a file." FORCE)
 endif()
-
 # Prepare list boards command.
 # This command is used for locating the board dir as well as printing all boards
 # in the system in the following cases:
@@ -188,6 +186,7 @@ set(format_str "${format_str}{REVISIONS}\;{SOCS}\;{QUALIFIERS}")
 if(BOARD_DIR)
   set(board_dir_arg "--board-dir=${BOARD_DIR}")
 endif()
+#message(STATUS "command: ${list_boards_commands}\n board_dir_arg: ${board_dir_arg}")
 execute_process(${list_boards_commands} --board=${BOARD} ${board_dir_arg}
   --cmakeformat=${format_str}
                 OUTPUT_VARIABLE ret_board

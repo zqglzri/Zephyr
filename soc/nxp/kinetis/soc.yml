@@ -7,6 +7,7 @@ family:
     - name: mkw24d5
     - name: mkw40z4
     - name: mkw41z4
+    - name: mkw38z4
   - name: k6x
     socs:
     - name: mk64f12
