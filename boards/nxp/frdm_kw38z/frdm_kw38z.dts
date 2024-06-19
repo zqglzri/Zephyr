@@ -31,6 +31,8 @@
 		zephyr,flash = &flash0;
 		zephyr,console = &lpuart0;
 		zephyr,shell-uart = &lpuart0;
+		zephyr,bt_uart = &lpuart0;
+		zephyr,bt_c2h_uart = &lpuart0;
 		zephyr,ieee802154 = &ieee802154;
 		zephyr,code-partition = &slot0_partition;
 	};
@@ -135,6 +137,7 @@
 
 &lpuart0 {
 	status = "okay";
+	compatible = "nxp,kinetis-lpuart";
 	pinctrl-0 = <&lpuart0_default>;
 	pinctrl-names = "default";
 	current-speed = <115200>;
